@@ -1,0 +1,17 @@
+name: Test
+
+on: [push]
+
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    name: Run echo tests
+    steps:
+      - uses: actions/checkout@v4
+      - name: Webhook
+        uses: ./
+        with:
+          url: 'https://postman-echo.com/post'
+          secret: '1234'
+          secretHeader: 'X-Secret'
+          data: '{ "key": "value" }'

@@ -1,0 +1,26 @@
+name: 'Fast Webhook'
+description:
+  'A simple, fast-compiling Javascript Github Action to send a POST request with a JSON body'
+branding:
+  icon: 'arrow-right'
+  color: 'black'
+inputs:
+  url:
+    description: 'The webhook URL to send the request to.'
+    required: true
+    default: ''
+  secret:
+    description: 'The secret to be sent in the request header.'
+    required: true
+    default: ''
+  secretHeader:
+    description: 'The header to send the secret in.'
+    required: true
+    default: ''
+  json:
+    description: 'The stringified JSON body to be sent, if any.'
+    required: false
+    default: '{}'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
