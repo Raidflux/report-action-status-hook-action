@@ -17,7 +17,7 @@ inputs:
     description: 'The header to send the secret in.'
     required: true
     default: ''
-  json:
+  data:
     description: 'The stringified JSON body to be sent, if any.'
     required: false
     default: '{}'
